@@ -1,0 +1,81 @@
+<div class="container-form">
+  <div class="col-8">
+    <h1>Formulario de Superheroe</h1>
+    <form
+      (ngSubmit)="onSubmit()"
+      [formGroup]="registerForm"
+      autocomplete="off"
+      class="row g-3"
+    >
+      <div class="form my-10">
+        <label for="inputFirstName" class="form-label">Nombre Completo</label>
+        <input
+          [formControl]="nameControl"
+          type="text"
+          placeholder="Mínimo 6 caracteres."
+          [ngClass]="{ 'form-invalid': this.nameControl.invalid && this.nameControl.touched }"
+          class="form-control"
+          id="inputFirstName"
+        >
+        <div class="invalid"
+          *ngIf="this.nameControl?.invalid && this.nameControl.touched">
+          Este campo es requerido.
+        </div>
+      </div>
+
+      <div class="form my-10">
+        <label for="inputLastName" class="form-label">Edad</label>
+        <input
+        [formControl]="ageControl"
+        [ngClass]="{ 'form-invalid': this.ageControl.invalid && this.ageControl.touched }"
+        type="text"
+        class="form-control"
+        id="inputLastName"
+        >
+        <div class="invalid"
+        *ngIf="this.ageControl?.invalid && this.ageControl.touched">
+        Este campo es requerido.
+        </div>
+      </div>
+
+      <div class="form my-10">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input
+          [formControl]="emailControl"
+          type="email"
+          [ngClass]="{ 'form-invalid': this.emailControl.invalid && this.emailControl.touched}"
+          class="form-control"
+          id="inputEmail4"
+        >
+        <div class="invalid"
+        *ngIf="this.emailControl?.invalid && this.emailControl.touched">
+        Este campo es requerido.
+        </div>
+      </div>
+
+      <div class="my-10">
+        <label for="inputState" class="form-label">Superpoder</label>
+        <select
+          id="inputState"
+          [formControl]="powerControl"
+          [ngClass]="{ 'form-invalid': this.powerControl.invalid && this.powerControl.touched }"
+          >
+          <option value="" selected>Selecciona</option>
+          <option value="BS. AS.">Superfuerza</option>
+          <option>Volar</option>
+          <option>Invisibilidad</option>
+          <option>Leer la mente</option>
+          <option>Inmunidad</option>
+        </select>
+        <div class="invalid"
+        *ngIf="this.powerControl?.invalid && this.powerControl.touched">
+        Este campo es requerido.
+        </div>
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>

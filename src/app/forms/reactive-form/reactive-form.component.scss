@@ -1,0 +1,20 @@
+.container-form {
+  width: 400px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-invalid {
+  background-color: red;
+}
+
+.invalid {
+  color: darkred;
+}
+
+.my-10 {
+  margin: 10px 0;
+}
